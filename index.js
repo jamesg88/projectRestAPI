@@ -12,7 +12,7 @@ const courses = [
     {id: 5, name: 'Machine Learning'}
 ];
 app.get('/', (req, res) => {
-    res.send('Top Of The Morning!!!')
+    res.send('Top Of The Morning!!!'<br>'Welcome to Online Classes')
 });
 
 //all courses 
@@ -64,16 +64,16 @@ app.delete('/api/courses/:id', (req, res) => {
     const index =courses.indexOf(course);
     courses.splice(index, 1)
 
-    Response.send(course)
+    res.send(course);
 });
 
 
 
 
-//     function validateCourse(course) {
-//         const schema = {
-//             name: Joi.string().min(3).required()
-//         };
+    function validateCourse(course) {
+        const schema = {
+            name: Joi.string().min(3).required()
+        };
 
-//          return Joi.validate(course, schema);
-// }   
+         return Joi.validate(course, schema);
+}   
