@@ -11,6 +11,7 @@ const courses = [
     {id: 4, name: 'Artificial Intelligence'},
     {id: 5, name: 'Machine Learning'}
 ];
+
 app.get('/', (req, res) => {
     res.send('Top Of The Morning!!!'<br>'Welcome to Online Classes')
 });
@@ -60,15 +61,7 @@ app.delete('/api/courses/:id', (req, res) => {
     courses.splice(index, 1)
 
     res.send(course);
-});
+})
 
-
-
-
-    function validateCourse(course) {
-        const schema = {
-            name: Joi.string().min(3).required()
-        };
-
-         return Joi.validate(course, schema);
-}   
+app.listen(5000, () => {
+    console.log("Server running on port 5000")
